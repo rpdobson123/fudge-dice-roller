@@ -33,6 +33,6 @@ client.on('message', msg => {
     }
 });
 
-client.login('NjY0NzExMjc1NjAzMDM0MTIy.XhbEsg.HVjlyzcxf5PjuX-tO00QDRZ8YoU');
-
-// https://discordapp.com/api/oauth2/authorize?client_id=664711275603034122&permissions=1074134080&scope=bot
+client.login(PROCESS.env.AUTH_TOKEN).then(() => {
+    client.channels.get(PROCESS.env.CHANNEL_ID).send(`I'm alive! Type /fudge to roll fudge dice!`);
+});
